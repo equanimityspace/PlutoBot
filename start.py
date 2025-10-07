@@ -16,7 +16,7 @@ class PlatoBot(commands.Bot):
         initial_extensions: List[str],
         #db_pool: asyncpg.Pool, TODO database
         web_client: ClientSession,
-        testing_guild_id: Optional[int] = 1424916485360320574, # AI Bot Testing server
+        testing_guild_id: Optional[int] = settings.testing_discord_id, # AI Bot Testing server
         **kwargs,
     ):
         super().__init__(*args, **kwargs)
