@@ -30,6 +30,9 @@ class PlatoBot(commands.Bot):
         for extension in self.initial_extensions:
             await self.load_extension(extension)
 
+        # print loaded extensions (cogs)
+        print(self.initial_extensions)
+
         # setup sync for testing guild only
         if self.testing_guild_id:
             guild = discord.Object(self.testing_guild_id)
@@ -41,7 +44,7 @@ class PlatoBot(commands.Bot):
         # TODO load db here later
 
 async def main():
-    # start loggingW
+    # start logging
     # using rotating file logger
 
     logger = logging.getLogger('discord')
@@ -61,7 +64,7 @@ async def main():
     # create web client & db pool which cleanup at exit
     # then start bot
     async with ClientSession() as our_client: # asyncpg.create_pool(user='postgres', command_timeout=30) as pool: TODO uncomment when db is implemented
-        exts = [] # TODO list cogs later
+        exts = ['cogs.generatetext'] # TODO list cogs later
         intents = discord.Intents.default() # default permissions
         intents.message_content = True # privleged TODO review if bot gets invited to 100 servers
         async with PlatoBot(
