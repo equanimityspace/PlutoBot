@@ -41,7 +41,7 @@ class PlatoBot(commands.Bot):
         # TODO load db here later
 
 async def main():
-    # start loggingW
+    # start logging
     # using rotating file logger
 
     logger = logging.getLogger('discord')
