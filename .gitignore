@@ -1,0 +1,9 @@
+# log stuff
+*.log
+
+# environments
+*.env
+/pluto-venv
+
+# python
+/__pycache__
