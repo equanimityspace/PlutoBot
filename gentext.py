@@ -12,8 +12,6 @@ async def gen_text(prompt):
         # TODO enable thinking, consider budget https://ai.google.dev/gemini-api/docs/thinking
         config=types.GenerateContentConfig(
             thinking_config=types.ThinkingConfig(thinking_budget=0), # dynamic thinking: thinking_budget=-1
-            # attempt to restrict length of responses. 1 token is 3-4 words, so restrict to 500 words max (hopefully under 4000 characters)
-            max_output_tokens=400,
             # global prompt
             # TODO allow users to choose individual system prompts?
             system_instruction="""
