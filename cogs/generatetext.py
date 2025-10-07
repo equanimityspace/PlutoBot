@@ -1,5 +1,5 @@
 from discord.ext import commands
-
+from gentext import gen_text
 
 class GenerateText(commands.Cog):
     def __init__(self, bot):
@@ -11,7 +11,8 @@ class GenerateText(commands.Cog):
              return
 
         if f'<@{self.bot.user.id}>' in message.content:
-            await message.reply(f'Hello! You said {message.content}')
+            response = await gen_text(message.content)
+            await message.reply(response)
 
 async def setup(bot):
     await bot.add_cog(GenerateText(bot))
