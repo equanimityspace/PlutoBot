@@ -75,3 +75,5 @@ async def main():
 
 # now that what needs to run has been defined, tell asyncio to run it
 asyncio.run(main())
+
+# code sourced from https://github.com/Rapptz/discord.py/blob/v2.6.3/examples/advanced_startup.py (thank you!)
