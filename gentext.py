@@ -33,4 +33,4 @@ async def gen_text(prompt):
         )
         return response.text
     except:
-        return "An error has occurred, sorry!"
+        return "I'm sorry, an error has occurred."
