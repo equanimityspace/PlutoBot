@@ -19,10 +19,9 @@ class GenerateText(commands.Cog):
             # history currently has all data on every message, get author id and message
             history = []
             for msg in history_data:
-                past_message = await channel.fetch_message(msg.id)
                 history.append({
                     "author_id": msg.author.id,
-                    "message": past_message.content
+                    "message": msg.content
                 })
             
             # send prompt and message history to bot
