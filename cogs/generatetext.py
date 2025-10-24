@@ -14,7 +14,7 @@ class GenerateText(commands.Cog):
         if f'<@{self.bot.user.id}>' in message.content:
             # first, grab most recent 20 messages in that channel
             channel = self.bot.get_channel(message.channel.id)
-            history_data = [past_message async for past_message in channel.history(limit=20)]
+            history_data = [past_message async for past_message in channel.history(limit=100)]
             
             # history currently has all data on every message, get author id and message
             history = []
